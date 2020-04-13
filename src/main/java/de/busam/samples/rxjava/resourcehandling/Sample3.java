@@ -1,4 +1,4 @@
-package de.busam.samples.rxjava;
+package de.busam.samples.rxjava.resourcehandling;
 
 import io.reactivex.rxjava3.core.BackpressureStrategy;
 import io.reactivex.rxjava3.core.Flowable;
@@ -13,9 +13,9 @@ import io.reactivex.rxjava3.functions.Supplier;
  *
  * According to several blogs this is the preferred solution!
  */
-class Sample3 {
+public class Sample3 {
 
-    void execute(){
+    public void execute(){
         System.out.println("Sample 3: Flowable handles resource lifecycle with Flowable#using method:");
         create().subscribe(
                 onNext -> System.out.println("nextItem: "+onNext),

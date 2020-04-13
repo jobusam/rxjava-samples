@@ -1,17 +1,16 @@
-package de.busam.samples.rxjava;
+package de.busam.samples.rxjava.resourcehandling;
 
 import io.reactivex.rxjava3.core.BackpressureStrategy;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.core.FlowableOnSubscribe;
-import io.reactivex.rxjava3.disposables.Disposable;
 
 /**
  * Sample 1: The caller of the flowable is responsible
  * for creating and closing the resource!
  */
-class Sample1 {
+public class Sample1 {
 
-    void execute(){
+    public void execute(){
         System.out.println("Sample 1: Closing the resource externally:");
 
         //Create resource externally

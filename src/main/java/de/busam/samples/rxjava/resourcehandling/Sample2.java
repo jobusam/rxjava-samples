@@ -1,4 +1,4 @@
-package de.busam.samples.rxjava;
+package de.busam.samples.rxjava.resourcehandling;
 
 import io.reactivex.rxjava3.core.BackpressureStrategy;
 import io.reactivex.rxjava3.core.Flowable;
@@ -9,9 +9,9 @@ import io.reactivex.rxjava3.functions.Action;
  * de.busam.samples.rxjava3.Sample2 the Flowable itself is responsible for
  * closing resource with the {@link Flowable#doFinally(Action)} method!
  */
-class Sample2 {
+public class Sample2 {
 
-    void execute(){
+    public void execute(){
         System.out.println("Sample 2: Closing the resource internally:");
 
         // creating the resource is not necessary for the callee

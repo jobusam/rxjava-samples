@@ -1,4 +1,4 @@
-package de.busam.samples.rxjava;
+package de.busam.samples.rxjava.resourcehandling;
 
 class Resource implements AutoCloseable {
 
