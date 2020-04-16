@@ -20,7 +20,15 @@ using the Flowable#using() method!
 Run the samples with ``./gradlew run`` command.
 
 ## Further samples
-* [Interval Flowable](src/main/java/de/busam/samples/rxjava/IntervalFlowable.java)
-is flowable the emits events in endless loop until a specific marker file is
+* The [Interval Flowable](src/main/java/de/busam/samples/rxjava/endlesslooping/IntervalFlowable.java)
+is flowable the emits events in an endless loop until a specific marker file is
 created on local file system. With this implementation a flowable can be stopped 
-gracefully.
+gracefully. Additionally the interval flowable itself is executed in the main thread
+and processes events sequentially. But there is also a another implementation in this
+class where the events will be processed by some long running subtasks that are
+executed in parallel by usage of flatMap operator combined with the IO Scheduler.
+
+* The [RepeatedFlowableWithThreadPool](src/main/java/de/busam/samples/rxjava/endlesslooping/RepeatedFlowableWithThreadPool.java)
+is another example how execute events in an endless loop an different thread (provided by a thread pool).
+This example processes the events also sequentially.
+

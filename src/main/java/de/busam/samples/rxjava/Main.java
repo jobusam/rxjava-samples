@@ -1,5 +1,7 @@
 package de.busam.samples.rxjava;
 
+import de.busam.samples.rxjava.endlesslooping.IntervalFlowable;
+import de.busam.samples.rxjava.endlesslooping.RepeatedFlowableWithThreadPool;
 import de.busam.samples.rxjava.resourcehandling.Sample1;
 import de.busam.samples.rxjava.resourcehandling.Sample2;
 import de.busam.samples.rxjava.resourcehandling.Sample3;
@@ -7,14 +9,24 @@ import de.busam.samples.rxjava.resourcehandling.Sample3;
 public class Main {
 
     public static void main(String[] args){
-        executeResourceHandling();
-        //executeIntevalFlowableWithMarkerFile();
+        //executeResourceHandling();
+        //executeIntervalFlowable();
+        executeIntervalFlowableExtended();
+        //executeRepeatedFlowableWithThreadPool();
     }
 
-    public static void executeIntevalFlowableWithMarkerFile(){
-
+    public static void executeIntervalFlowable(){
         new IntervalFlowable().execute();
     }
+
+    public static void executeIntervalFlowableExtended(){
+        new IntervalFlowable().executeWithExtendedWorkload();
+    }
+
+    public static void executeRepeatedFlowableWithThreadPool(){
+        new RepeatedFlowableWithThreadPool().execute();
+    }
+
 
     private static void executeResourceHandling(){
         System.out.println("------Resource Handling with RxJava----");
